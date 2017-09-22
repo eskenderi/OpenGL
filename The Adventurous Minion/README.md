@@ -1,21 +1,14 @@
 # **OpenGL 3D Objects Implementation:**
 # **The Adventurous Minion**
 
-
-
-
-
-
-
-
-
-Introduction
+## Introduction
 In this project, I implemented a game by making use of the glut 3D primitives. The player character is supposed to be a Minion, a personage borrowed from the movie “Minions”. It is supposed to collect as many donuts as possible while making sure not to step on a red tile which would melt it down. The plane itself consists of an array of 400 tiles(20x20). Each tile is initially randomly initialized as red or green one. Player is positioned in the tile with coordinates (0,0). The program makes sure there always exist a RANDOM path for the player to follow. 
 
 The controllers of this game are straight forward and can be found below. 
 
 The project itself consists of two classes namely ‘Tile’ and ‘Player’. On each of these classes are implemented the drawing methods and the animation logic. Below I will attach the actual code for all classes and their respective header files.
-Player.h
+### Player.h
+```cpp
 #pragma once
 #include <gl/glut.h>
 class Player {
@@ -37,8 +30,9 @@ public:
 	void drawPlayer(bool _gamePaused);
 	void jump(int direction);
 };
-
-Player.cpp
+```
+### Player.cpp
+```cpp
 #include <Player.h>
 #include <iostream>
 using namespace std;
@@ -172,9 +166,10 @@ void Player::jump(int direction) {
 	tempZ = deltaJumpZ;
 	jumpDirection = direction; //0 for x-axis, 1 for y-axis
 }
+```
 
-
-Tile.h
+### Tile.h
+```cpp
 #pragma once
 #include < gl/glut.h>
 
@@ -193,12 +188,13 @@ class Tile {
 		Tile(GLfloat sideSize, bool enabled, bool hasDonut);
 		void drawTile();
 };
+```
 
 
 
 
-
-Tile.cpp
+### Tile.cpp
+```cpp
 #include <tile.h>
 #include <iostream>
 using namespace std;
@@ -274,9 +270,10 @@ void Tile::drawTile()
 	glutSolidCube(sideSizes);
 	glPopAttrib();
 }
+```
 
-
-Source.cpp (This file contains the main method)
+### Source.cpp (This file contains the main method)
+```cpp
 #include <gl/glut.h>
 #include <tile.h>
 #include <time.h>
@@ -534,3 +531,4 @@ void main(int argc, char** argv) {
 	glutIdleFunc(idle);
 	glutMainLoop();
 }
+```
