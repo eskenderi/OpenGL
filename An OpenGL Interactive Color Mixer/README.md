@@ -1,65 +1,12 @@
-Queens College
-Date: 08/07
-Student: Erjon Skenderi
+# Implementation of an Interactive 
+# Color Picker
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-Implementation of an Interactive 
-Color Picker
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```cpp
 #include <vector>
 #include <gl/glut.h>
 #include <math.h>
 #include <string>
 using namespace std;
-
 
 int width = 800, height = 600;
 int showBoxWidth = 250, showBoxHeight = 250, gradientBoxWidth = 355, gradientBoxHeight = 75;
@@ -318,4 +265,4 @@ void main(int argc, char** argv)
 	glutMainLoop();
 }
 
-
+```
